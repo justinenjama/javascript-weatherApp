@@ -1,33 +1,45 @@
 body {
-    height: 100vh;
+    height: 120vh;
     color: rgb(53, 52, 52);
-    background: linear-gradient(120deg, rgb(245, 104, 104), rgb(56, 247, 56), rgb(100, 100, 243));
-    font-family: Arial, sans-serif;  /* Add a default font family */
+    background: linear-gradient(100deg, rgb(223, 124, 124), rgb(86, 224, 68), rgb(138, 138, 230));
+    font-family: Arial, sans-serif; 
+    padding: 0;
+    margin-top: 80px;
 }
 
-h1, h3 {
+h1{
     text-align: center;
     color: red;
 }
-
+h2{
+    color: rgb(255, 51, 0); 
+    animation: moving_name 4s linear infinite;
+}
+pre{
+    font-weight: bolder;
+    font-size: 1.1rem;
+}
 #developer {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    text-align: center;
 }
 
 #weather-form {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;  /* Added some space below the form */
+    margin-bottom: 20px;
+    padding: 10px;
 }
 
 input {
     border: none;
     outline: none;
-    width: 350px;
-    padding: 10px;  /* Added padding for better user experience */
-    font-size: 1rem;  /* Added font size for better readability */
+    width: 100%;
+    max-width: 350px; 
+    padding: 10px;
+    font-size: 1rem;
 }
 
 .search {
@@ -35,6 +47,9 @@ input {
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 450px;
+    display: flex;
 }
 
 button {
@@ -43,12 +58,14 @@ button {
     font-weight: bold;
     background-color: transparent;
     cursor: pointer;
+    padding: 10px;
 }
 
 .container-results {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 #weatherData {
@@ -57,7 +74,7 @@ button {
     padding: 10px 15px;
     border-radius: 8px;
     background: linear-gradient(120deg, rgb(174, 195, 204), rgb(226, 94, 186), rgb(233, 243, 100));
-    width: 90%; 
+    width: 90%;
     max-width: 500px;
 }
 
@@ -81,5 +98,76 @@ button {
     }
     100% { 
         transform: rotate(360deg); 
+    }
+}
+@keyframes moving_name {
+    0% {
+        transform: translateX(-15px); 
+    }
+    50% {
+        transform: translateX(90%);  
+    }
+    100% {
+        transform: translateX(-15px); 
+    }
+}
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    input {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 1.2rem;
+        padding: 12px;
+    }
+
+    #weatherData {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #loading {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .search {
+        width: 80%;
+    }
+
+    input {
+        font-size: 1.1rem;
+    }
+
+    button {
+        font-size: 1.3rem;
+    }
+
+    #weatherData {
+        width: 80%;
+    }
+
+    #loading {
+        width: 35px;
+        height: 35px;
+    }
+}
+@media (min-width: 1024px) {
+    #weatherData {
+        max-width: 600px;
     }
 }
