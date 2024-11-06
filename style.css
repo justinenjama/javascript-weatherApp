@@ -1,0 +1,85 @@
+body {
+    height: 100vh;
+    color: rgb(53, 52, 52);
+    background: linear-gradient(120deg, rgb(245, 104, 104), rgb(56, 247, 56), rgb(100, 100, 243));
+    font-family: Arial, sans-serif;  /* Add a default font family */
+}
+
+h1, h3 {
+    text-align: center;
+    color: red;
+}
+
+#developer {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#weather-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;  /* Added some space below the form */
+}
+
+input {
+    border: none;
+    outline: none;
+    width: 350px;
+    padding: 10px;  /* Added padding for better user experience */
+    font-size: 1rem;  /* Added font size for better readability */
+}
+
+.search {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+button {
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.container-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#weatherData {
+    display: none;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: linear-gradient(120deg, rgb(174, 195, 204), rgb(226, 94, 186), rgb(233, 243, 100));
+    width: 90%; 
+    max-width: 500px;
+}
+
+#loading {
+    display: block;
+    margin: 20px auto;
+    border: 8px solid hsl(0, 0%, 95%);
+    border-top: 8px solid hsl(204, 70%, 53%);
+    border-bottom: 8px solid hsl(204, 70%, 53%);
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
